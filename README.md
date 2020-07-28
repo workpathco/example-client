@@ -14,4 +14,6 @@ yarn
 
 ## Running
 
+```sh
 REACT_APP_CLIENT_ID=XXXXX-XXXXXX-XXXX-XXXXXX REACT_APP_REDIRECT_URI=https://redirect.uri yarn start
+```
