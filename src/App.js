@@ -58,10 +58,10 @@ function App() {
         {!user.person && (
           <a
             className="App-link"
-            href=""
-            onClick={() => {
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
               authentication.login();
-              return false;
             }}
           >
             Login
