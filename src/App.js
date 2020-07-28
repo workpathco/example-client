@@ -4,12 +4,17 @@ import { Authenticate } from "@workpathco/client";
 import cookie from "js-cookie";
 import "./App.css";
 const TOKEN_KEY = "_wp_token";
-const authentication = new Authenticate({
-  redirect_uri: `${window.location.protocol}//${window.location.host}`,
+const options = {
+  redirect_uri: process.env.REACT_APP_CLIENT_ID,
   client_id: process.env.REACT_APP_CLIENT_ID,
-  auth_domain: process.env.REACT_APP_API_URL,
-  id_domain: process.env.REACT_APP_ID_URL,
-});
+};
+if (process.env.REACT_APP_API_URL) {
+  options.auth_domain = process.env.REACT_APP_API_URL;
+}
+if (process.env.REACT_APP_ID_URL) {
+  options.id_domain = process.env.REACT_APP_API_URL;
+}
+const authentication = new Authenticate(options);
 async function getUser(token) {
   return fetch(`${process.env.REACT_APP_ID_URL}/auth/me`, {
     mode: "cors",
