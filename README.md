@@ -1,6 +1,6 @@
 # Workpath Web Client Example App
 
-This package was created to help single page applications connect to Workpath using oauth's authorization code flow.
+Example app built in React to demo Workpath's OAuth flow for web clients
 
 ## Installation
 
