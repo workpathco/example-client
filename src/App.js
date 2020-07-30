@@ -5,7 +5,7 @@ import cookie from "js-cookie";
 import "./App.css";
 const TOKEN_KEY = "_wp_token";
 const options = {
-  redirect_uri: process.env.REACT_APP_CLIENT_ID,
+  redirect_uri: process.env.REACT_APP_REDIRECT_URI,
   client_id: process.env.REACT_APP_CLIENT_ID,
 };
 if (process.env.REACT_APP_API_URL) {
